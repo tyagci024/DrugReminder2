@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="24dp"
+    android:background="@drawable/bg_app"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.view.TreatmentUpdate">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/drugNameUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/input_background"
+                android:ems="10"
+                android:hint="ilaç ismi"
+                android:inputType="textPersonName"
+                android:paddingLeft="24dp"
+                android:paddingRight="22dp"
+                />
+
+
+            <EditText
+                android:id="@+id/offenUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/input_background"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="günde kaç kere"
+                android:inputType="textMultiLine"
+                android:paddingStart="24dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="24dp"
+                />
+            <EditText
+                android:id="@+id/descriptionUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/input_background"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="talimat"
+                android:inputType="textMultiLine"
+                android:paddingStart="24dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="24dp"
+                />
+
+
+
+
+
+
+
+
+            <TimePicker
+                android:id="@+id/timeInputUpdate"
+                android:layout_marginTop="12dp"
+                android:timePickerMode="spinner"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp" />
+            <DatePicker
+                android:id="@+id/endDatePickerUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/repeatCheckBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <CheckBox
+                android:id="@+id/repeatCheckBoxUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repeat"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+
+                app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+            <Button
+                android:id="@+id/addButtonUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2a9d8f"
+                android:layout_marginTop="12dp"
+                android:shadowRadius="@integer/material_motion_duration_long_1"
+                android:textColor="@color/white"
+                android:text="kaydet"
+                ></Button>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

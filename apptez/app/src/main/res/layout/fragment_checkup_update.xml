@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="CheckUpDetayNesnesi"
+            type="com.example.apptez.view.view.CheckupUpdate" />
+        <variable
+            name="CheckUpDateNesnesi"
+            type="com.example.apptez.view.model.CheckUpDate" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="24dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/bg_app"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.view.CheckupUpdate">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/hospitalUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:text="@{CheckUpDateNesnesi.doctor}"
+                android:background="@drawable/input_background"
+                android:ems="10"
+                android:hint="Doktor İsmi"
+                android:inputType="textPersonName"
+                android:paddingLeft="24dp"
+                android:paddingRight="22dp"
+                />
+
+
+            <EditText
+                android:id="@+id/doctorUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/input_background"
+                android:ems="10"
+                android:gravity="start|top"
+                android:text="@{CheckUpDateNesnesi.hospital}"
+                android:hint="Hastane İsmi"
+                android:inputType="textMultiLine"
+
+                android:paddingStart="24dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="24dp"
+                />
+
+
+
+
+
+
+
+
+
+            <TimePicker
+                android:id="@+id/timeInputUpdate"
+                android:layout_marginTop="12dp"
+                android:timePickerMode="spinner"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp" />
+            <DatePicker
+                android:id="@+id/checkupDateUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/repeatCheckBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+            <Button
+                android:id="@+id/buttonSaveDateUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2a9d8f"
+                android:layout_marginTop="12dp"
+                android:shadowRadius="@integer/material_motion_duration_long_1"
+                android:onClick="@{() -> CheckUpDetayNesnesi.buttonUpdate()}"
+                android:textColor="@color/white"
+                android:text="kaydet"
+                ></Button>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

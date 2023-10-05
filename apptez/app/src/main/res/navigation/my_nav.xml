@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.apptez.view.view.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentPharmacy"
+            app:destination="@id/fragmentPharmacy" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentPersonalInfo"
+            app:destination="@id/fragmentPersonalInfo" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentPassedTreatment"
+            app:destination="@id/fragmentPassedTreatment" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentCheckUpAdd"
+            app:destination="@id/fragmentCheckUpAdd" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentCheckUpList"
+            app:destination="@id/fragmentCheckUpList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentNewTreatment"
+        android:name="com.example.apptez.view.view.FragmentNewTreatment"
+        android:label="fragment_new_treatment"
+        tools:layout="@layout/fragment_new_treatment" >
+        <action
+            android:id="@+id/action_fragmentNewTreatment_to_fragmentList"
+            app:destination="@id/fragmentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPassedTreatment"
+        android:name="com.example.apptez.view.view.FragmentPassedTreatment"
+        android:label="fragment_passed_treatment"
+        tools:layout="@layout/fragment_passed_treatment" >
+        <action
+            android:id="@+id/action_fragmentPassedTreatment_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPersonalInfo"
+        android:name="com.example.apptez.view.view.FragmentPersonalInfo"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_personal_info" >
+        <argument
+            android:name="personUuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_fragmentPersonalInfo_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentPersonalInfo_to_fragmentAdmin"
+            app:destination="@id/fragmentAdmin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPharmacy"
+        android:name="com.example.apptez.view.view.FragmentPharmacy"
+        android:label="fragment_pharmacy"
+        tools:layout="@layout/fragment_pharmacy" />
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.example.apptez.view.view.FragmentList"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentHome2"
+            app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentNewTreatment"
+            app:destination="@id/fragmentNewTreatment" />
+        <action
+            android:id="@+id/action_fragmentList_to_treatmentUpdate"
+            app:destination="@id/treatmentUpdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCheckUpAdd"
+        android:name="com.example.apptez.view.view.FragmentCheckUpAdd"
+        android:label="fragment_check_up_add"
+        tools:layout="@layout/fragment_check_up_add" >
+        <action
+            android:id="@+id/action_fragmentCheckUpAdd_to_fragmentCheckUpList"
+            app:destination="@id/fragmentCheckUpList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCheckUpList"
+        android:name="com.example.apptez.view.view.FragmentCheckUpList"
+        android:label="fragment_check_up_list"
+        tools:layout="@layout/fragment_check_up_list" >
+        <action
+            android:id="@+id/action_fragmentCheckUpList_to_fragmentCheckUpAdd"
+            app:destination="@id/fragmentCheckUpAdd" />
+        <action
+            android:id="@+id/action_fragmentCheckUpList_to_checkupUpdate"
+            app:destination="@id/checkupUpdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/treatmentUpdate"
+        android:name="com.example.apptez.view.view.TreatmentUpdate"
+        android:label="fragment_treatment_update"
+        tools:layout="@layout/fragment_treatment_update" >
+        <action
+            android:id="@+id/action_treatmentUpdate_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <argument
+            android:name="currentDrug"
+            app:argType="com.example.apptez.view.model.Drug" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkupUpdate"
+        android:name="com.example.apptez.view.view.CheckupUpdate"
+        android:label="fragment_checkup_update"
+        tools:layout="@layout/fragment_checkup_update" >
+        <action
+            android:id="@+id/action_checkupUpdate_to_fragmentCheckUpList"
+            app:destination="@id/fragmentCheckUpList" />
+        <argument
+            android:name="currentDate"
+            app:argType="com.example.apptez.view.model.CheckUpDate" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAdmin"
+        android:name="com.example.apptez.view.view.FragmentAdmin"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" >
+        <argument
+            android:name="currentPerson"
+            app:argType="com.example.apptez.view.model.Person" />
+        <action
+            android:id="@+id/action_fragmentAdmin_to_fragmentPersonalInfo"
+            app:destination="@id/fragmentPersonalInfo" />
+    </fragment>
+</navigation>
